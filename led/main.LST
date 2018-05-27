@@ -1,0 +1,69 @@
+C51 COMPILER V9.01   MAIN                                                                  05/26/2018 22:36:27 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: E:\keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "reg52.h"
+   2          #include "intrins.h"
+   3          
+   4          #define led P0                                    //定义p0端口为led
+   5          
+   6          typedef unsigned int uint16;
+   7          typedef unsigned int uint8;        
+   8          
+   9          //sbit led1 = P0^0;
+  10          //sbit led2 = P0^1;
+  11          //sbit led3 = P0^2;
+  12          
+  13          int delay(uint16 i)                                       //延时函数
+  14          {
+  15   1              while(i--);
+  16   1              return 0;
+  17   1      }
+  18          
+  19          int main(void)
+  20          {
+  21   1              uint8 i = 0;
+  22   1              led = 0x01;
+  23   1              while(1)
+  24   1              {
+  25   2              /*      for(i = 0;i < 8 ; i++)
+  26   2                      {
+  27   2                              led = (0x01<<i);                                  //利用位移
+  28   2                              delay(50000);
+  29   2                      }
+  30   2              */
+  31   2      
+  32   2                       for(i = 0;i < 7;i++)
+  33   2                       {
+  34   3                              led=_crol_(led,1);
+  35   3                              delay(50000);
+  36   3                       }
+  37   2      
+  38   2              
+  39   2      //              led2 = 0;
+  40   2      //              led3 = 1;
+  41   2              }
+  42   1      
+  43   1              return 0;
+  44   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     53    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V9.01   MAIN                                                                  05/26/2018 22:36:27 PAGE 2   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

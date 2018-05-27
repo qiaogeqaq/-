@@ -1,0 +1,80 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\单片机工程\动态数码管\led.uvproj
+Project File Date:  05/26/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(16): error C141: syntax error near 'int'
+MAIN.C(17): error C141: syntax error near '{'
+MAIN.C(23): error C141: syntax error near '{'
+MAIN.C(25): error C141: syntax error near 'for'
+MAIN.C(25): error C141: syntax error near '=', expected ')'
+MAIN.C(25): error C129: missing ';' before '<'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(16): error C141: syntax error near 'int'
+MAIN.C(17): error C141: syntax error near '{'
+MAIN.C(23): error C141: syntax error near '{'
+MAIN.C(25): error C141: syntax error near 'for'
+MAIN.C(25): error C141: syntax error near '=', expected ')'
+MAIN.C(25): error C129: missing ';' before '<'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(16): error C141: syntax error near 'int'
+MAIN.C(17): error C141: syntax error near '{'
+MAIN.C(23): error C141: syntax error near '{'
+MAIN.C(25): error C141: syntax error near 'for'
+MAIN.C(25): error C141: syntax error near '=', expected ')'
+MAIN.C(25): error C129: missing ';' before '<'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+MAIN.C(16): error C141: syntax error near 'int'
+MAIN.C(17): error C141: syntax error near '{'
+MAIN.C(23): error C141: syntax error near '{'
+MAIN.C(25): error C141: syntax error near 'for'
+MAIN.C(25): error C141: syntax error near '=', expected ')'
+MAIN.C(25): error C129: missing ';' before '<'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=185
+creating hex file from "led"...
+"led" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=9.0 xdata=0 code=185
+creating hex file from "led"...
+"led" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=202
+creating hex file from "led"...
+"led" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=202
+creating hex file from "led"...
+"led" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=202
+creating hex file from "led"...
+"led" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+Program Size: data=9.0 xdata=0 code=202
+creating hex file from "led"...
+"led" - 0 Error(s), 0 Warning(s).

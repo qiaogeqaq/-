@@ -1,0 +1,98 @@
+C51 COMPILER V9.01   MAIN                                                                  05/27/2018 15:41:22 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: E:\keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "reg52.h"
+   2          #include "intrins.h"
+   3          
+   4          
+   5          typedef unsigned int uint16;
+   6          typedef unsigned int uint8;        
+   7          
+   8          sbit LSA = P2^2;
+   9          sbit LSB = P2^3;
+  10          sbit LSC = P2^4;
+  11          
+  12          uint8 code A_list[16] = {0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,
+  13                                                                  0x07,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+  14          
+  15          
+  16          int delay(uint16 i)                                       //延时函数
+  17          {
+  18   1              while(i--);
+  19   1              return 0;
+  20   1      }
+  21          
+  22          void digdisplay()
+  23          {
+  24   1              uint8 i;
+  25   1              for(i=0;i<8;i++)
+  26   1              {
+  27   2                      switch(i)                                                                       //74hc138芯片真值表
+  28   2                      {
+  29   3                              case 0:                                                                 //循环点亮
+  30   3                                      LSA=0;LSB=0;LSC=0;
+  31   3                                      break;
+  32   3                              case 1:
+  33   3                                      LSA=1;LSB=0;LSC=0;
+  34   3                                      break;
+  35   3                              case 2:
+  36   3                                      LSA=0;LSB=1;LSC=0;
+  37   3                                      break;
+  38   3                              case 3:
+  39   3                                      LSA=1;LSB=1;LSC=0;
+  40   3                                      break;
+  41   3                              case 4:
+  42   3                                      LSA=0;LSB=0;LSC=1;
+  43   3                                      break;
+  44   3                              case 5:
+  45   3                                      LSA=1;LSB=0;LSC=1;
+  46   3                                      break;
+  47   3                              case 6:
+  48   3                                      LSA=0;LSB=1;LSC=1;
+  49   3                                      break;
+  50   3                              case 7:
+  51   3                                      LSA=1;LSB=1;LSC=1;
+  52   3                                      break;
+  53   3      
+  54   3                      }
+  55   2                      P0 = A_list[i];
+C51 COMPILER V9.01   MAIN                                                                  05/27/2018 15:41:22 PAGE 2   
+
+  56   2                      delay(100000);     //控制生成间隔
+  57   2                      P0 = 0x00;                //消影
+  58   2              }
+  59   1      }
+  60                                                                  
+  61          
+  62          
+  63          
+  64          
+  65          int main(void)
+  66          {
+  67   1              while(1)
+  68   1              {
+  69   2                      digdisplay();
+  70   2              }
+  71   1      
+  72   1              return 0;
+  73   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    155    ----
+   CONSTANT SIZE    =     32    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
